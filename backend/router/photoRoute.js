@@ -8,6 +8,7 @@ const router = express.Router();
 router.post("/upload", upload.single("file"),requireSignIn, uploadPhoto);
 router.post(
   "/upload-multiple",
+  requireSignIn,
   upload.array("photos", 10), // max 10 files
   uploadMultiplePhotos
 );

@@ -3,6 +3,7 @@ import { Container, Grid, Typography, CircularProgress, TextField, Box, Button }
 import axios from 'axios';
 import PhotoCard from '../components/PhotoCard';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const Dashboard = () => {
   const [photos, setPhotos] = useState([]);
@@ -31,26 +32,6 @@ const Dashboard = () => {
       setLoading(false);
     }
   };
-
-  // search functionality
-//   const searchPhotos = async () => {
-//   try {
-//     const res = await axios.get(
-//       `${process.env.REACT_APP_API_URL}/photos${search ? `/search?q=${search}` : ''}`,
-//       {
-//         headers: {
-//           Authorization: `Bearer ${localStorage.getItem('token')}`,
-//         },
-//       }
-//     );
-//     setPhotos(res.data);
-//   } catch (err) {
-//     console.error('Failed to fetch photos:', err);
-//   } finally {
-//     setLoading(false);
-//   }
-// };
-
 
   useEffect(() => {
     fetchPhotos();
@@ -88,6 +69,7 @@ const Dashboard = () => {
           </Grid>
         )}
       </Container>
+      <Footer />
     </>
   );
 };

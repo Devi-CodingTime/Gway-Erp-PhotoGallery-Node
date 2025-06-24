@@ -13,6 +13,7 @@ import {
 } from '@mui/material';
 import axios from 'axios';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import { useNavigate } from 'react-router-dom';
 
 const AlbumPage = () => {
@@ -122,6 +123,7 @@ const handleCreateAlbum = async () => {
 
         
       </Container>
+      <Footer />
     </>
   );
 };
